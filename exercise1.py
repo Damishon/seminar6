@@ -1,26 +1,17 @@
-try:
-    fhand = open("mailbox.txt")
-except:
-    print('File cannot be opened')
-    exit()
-
-
+fhand = open ("mailbox.txt")
 
 lines=fhand.readlines()
-new_list=[]
-file=open('output.txt', 'w')
-
-
+Damishon=[]
+file2=open('output.txt', 'w')
 for line in lines:
-   if 'JAMES SMTP' in line:
-      ind=line.find('SMTP ID ')
-      en_ind=line.find(';')
-      word=line[ind+8:en_ind]
-      if word not in new_list:
-         new_list.append(word)
-      new_list.sort()
-for word in new_list:
-   print(word)
-   file.write(word)
-   file.write('\n')
+   if 'SMTP ID' in line:
+      print(line[68:-1])
+      if line not in Damishon:
+              Damishon.append(line)
+Damishon.sort()
+for line in Damishon:
+       file2.write(line[68:-1])      
+       file2.write('\n') 
+file2.close()
 fhand.close()
+

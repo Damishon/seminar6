@@ -13,10 +13,10 @@ for line in lines:
      Damishon.sort()
 #if line[68:-1] in Damishon:
      #file2.write(line[68:-1])
-     #file2.write('/n')
+     #file2.write('\n')
 for item in Damishon:
      file2.write(item)
-     file2.write('/n')
+     file2.write('\n')
 
 
 file2.close()
